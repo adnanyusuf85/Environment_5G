@@ -5,26 +5,27 @@ Roadspace UUIDs and CoverageTile objects.
 from typing import Dict
 from uuid import UUID
 from asphalt import Roadspace
+from asphalt import Mapworld
 from fiveg import CoverageTile
 from .asphalt.user import User
 
 
-class CoverageMap:
+class RFWorld(Mapworld):
     """
     Manages a mapping between Roadspace UUIDs and their corresponding 
-    CoverageTile objects.
+    RFSegment objects.
     Attributes:
-        tiles (Dict[UUID, CoverageTile]): A dictionary mapping Roadspace
+        rf_segments (Dict[UUID, RFSegment]): A dictionary mapping Roadspace
         UUIDs to CoverageTile objects.
     Methods:
         add_tile(roadspace: Roadspace, coveragetile: CoverageTile): Adds 
         a CoverageTile to the map associated with a specific Roadspace.
     """
 
-    def __init__(self, name="Untitled"):
-        '''
+    def __init__(self, name:str="Untitled"):
+        """
         Initializes an empty CoverageMap.
-        '''
+        """
         self.name = name
         self.tiles: Dict[UUID, CoverageTile] = {}
         self.roadspaces: Dict[UUID, Roadspace] = {}
@@ -42,9 +43,13 @@ class CoverageMap:
         self.roadspaces[roadspace.uuid] = roadspace
 
     def add_user_to_roadspace(self, user:User, roadspace:Roadspace):
+        """
+        Adds a User to a specified Roadspace and updates the User's current
+        Roadspace reference."""
         roadspace.add_user(user)
+        user.set_current_roadspace(roadspace)
     
     def remove_user_from_roadspace(self, user:User):
-        roadspace = user.get_current_roadspace()
+        roadspace:Roadspace = user.get_current_roadspace()
         roadspace.remove_user(user)
         user.leave_current_roadspace()

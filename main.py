@@ -1,4 +1,4 @@
-from .coverage_map import CoverageMap
+from .rfworld import CoverageMap
 
 area_map = CoverageMap()
 road_spaces = []

@@ -7,6 +7,7 @@ from .roadsegment import RoadSegment
 from .roadspace import Roadspace
 from .roadspacetype import RoadSpaceType
 from .user import User
+from .mapworld import Mapworld
 
 
 __all__ = [
@@ -16,4 +17,5 @@ __all__ = [
     "Roadspace",
     "RoadSpaceType",
     "User",
+    "Mapworld"
 ]

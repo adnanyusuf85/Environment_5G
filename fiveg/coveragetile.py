@@ -9,4 +9,6 @@ class CoverageTile:
     # tile_id
     # serving_sector_id
     # serving_sector_sinr_at_roadspace
-    pass
+    def __init__(self):
+        self.serving_sector_id = None
+        self.serving_sector_sinr = None
