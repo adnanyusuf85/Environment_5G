@@ -17,21 +17,7 @@ class RoadSegment(Roadspace):
         super().__init__(roadspace_type=RoadSpaceType.ROADSEGMENT)
         self.users: Set[User] = set()
   
-    def add_user(self, user:User):
-        """
-        Add a user to the road segment.
-        Args:
-            user (User): The user to be added to the road segment.
-        """
-        self.users.add(user)
-        
-    def remove_user(self, user:User):
-        """
-        Remove a user from the road segment.
-        Args:
-            user (User): The user to be removed from the road segment.
-        """
-        self.users.remove(user)
+    
         
     def __repr__(self) -> str:
         """Return the developer-friendly string representation of the object."""

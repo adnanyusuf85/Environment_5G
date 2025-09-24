@@ -5,6 +5,7 @@ from uuid import UUID, uuid4
 from typing import Optional, Dict
 from .roadspacetype import RoadSpaceType
 from .directions import Directions
+from .user import User
 
 
 class Roadspace:
@@ -32,7 +33,32 @@ class Roadspace:
         if reciprocal:
             neighbor.set_link_segment(direction.opposite, self, False)
     
+    def add_user(self, user:User):
+        """
+        Add a user to the road segment.
+        Args:
+            user (User): The user to be added to the road segment.
+        """
+        self.users.add(user)
+        
+    def remove_user(self, user:User):
+        """
+        Remove a user from the road segment.
+        Args:
+            user (User): The user to be removed from the road segment.
+        """
+        self.users.remove(user)
+    
+    def get_neighbors(self) -> Dict[Directions, Optional['Roadspace']] :
+       """
+       Return the neighbors (roadspace) of this roadspace 
+       """ 
+       return self.neighborhood
 
+    def exists_neighbor(self, direction:Directions) -> bool:
+        if (self.neighborhood[direction] != None):
+            return True
+        
     def __repr__(self) -> str:
         """Return the developer-friendly string representation of the object."""
         return "Roadspace"

@@ -6,6 +6,7 @@ from typing import Dict
 from uuid import UUID
 from asphalt import Roadspace
 from fiveg import CoverageTile
+from .asphalt.user import User
 
 
 class CoverageMap:
@@ -20,11 +21,13 @@ class CoverageMap:
         a CoverageTile to the map associated with a specific Roadspace.
     """
 
-    def __init__(self):
+    def __init__(self, name="Untitled"):
         '''
         Initializes an empty CoverageMap.
         '''
+        self.name = name
         self.tiles: Dict[UUID, CoverageTile] = {}
+        self.roadspaces: Dict[UUID, Roadspace] = {}
 
     def add_tile(self, roadspace:Roadspace, coveragetile:CoverageTile):
         """
@@ -36,3 +39,12 @@ class CoverageMap:
             to the map.
         """
         self.tiles[roadspace.uuid] = coveragetile
+        self.roadspaces[roadspace.uuid] = roadspace
+
+    def add_user_to_roadspace(self, user:User, roadspace:Roadspace):
+        roadspace.add_user(user)
+    
+    def remove_user_from_roadspace(self, user:User):
+        roadspace = user.get_current_roadspace()
+        roadspace.remove_user(user)
+        user.leave_current_roadspace()
