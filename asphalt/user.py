@@ -3,19 +3,17 @@ Module defining the User class, currently a placeholder.
 """
 from typing import Optional, Dict
 from uuid import uuid4
-from asphalt import Roadspace
-from asphalt import Directions
-from asphalt import Mapworld
 
 class User:
     """
     A placeholder class for User entities in the road network simulation.
     """
-    def __init__(self, mapworld:Mapworld):
+    def __init__(self, mapworld:'Mapworld'):
         self.id = uuid4()
-        self.position:Roadspace = None
+        self.position:'Roadspace' = None
         self.heading:Directions = None
         self.mapworld = mapworld
+        self.Directions = Directions()
 
     def teleport(self, roadspace: Roadspace):
         """
@@ -62,4 +60,4 @@ class User:
         if self.position.exists_neighbor(self.heading):
             self.position = self.position.neighborhood[self.heading]
         
-    
+ 
