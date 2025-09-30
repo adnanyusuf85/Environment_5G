@@ -23,7 +23,6 @@ class User:
         """
         self.position = roadspace
 
-    
     def leave_mapworld(self):
         """
         Remove the user from the mapworld.
@@ -31,7 +30,7 @@ class User:
             None        
         """
         self.mapworld.leave(self)
-    
+
     def place_randomly(self):
         """
         Place the user at a random position within the mapworld.
@@ -45,7 +44,7 @@ class User:
         """
         Return the neighbors (roadspace) of the user's current position.
         """
-        return self.position.neighborhood() 
+        return self.position.neighborhood()
 
     def move(self, direction):
         """
