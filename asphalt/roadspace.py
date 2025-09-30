@@ -7,7 +7,7 @@ from typing import Optional, Dict
 from .roadspacetype import RoadSpaceType
 from .directions import Directions
 from .user import User
-import testing
+
 
 class Roadspace:
     """
@@ -19,6 +19,7 @@ class Roadspace:
         self.neighborhood: Dict[Directions, Optional[Roadspace]] = {d: None for d in Directions}
         self.uuid: UUID = uuid4()
         self.roadspace_type: RoadSpaceType = roadspace_type
+        self.users: set[User] = set()
 
 
     def set_link_segment(self, direction:Directions, neighbor:'Roadspace', reciprocal:bool=True):
@@ -57,8 +58,17 @@ class Roadspace:
        return self.neighborhood
 
     def exists_neighbor(self, direction:Directions) -> bool:
-        if (self.neighborhood[direction] != None):
+        """
+        Check if there is a neighboring roadspace in the specified direction.
+        Args:
+            direction (Directions): The direction to check for a neighboring roadspace.
+        Returns:
+            bool: True if a neighboring roadspace exists in the specified direction, False otherwise.
+        """
+        if (self.neighborhood[direction] is not None):
             return True
+        else:
+            return False
         
     def __repr__(self) -> str:
         """Return the developer-friendly string representation of the object."""
