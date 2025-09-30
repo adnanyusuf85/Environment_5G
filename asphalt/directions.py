@@ -17,7 +17,8 @@ _opposite_map = {
 
 class Directions(Enum):
     """
-    Enumeration of cardinal and intercardinal directions with a property to get the opposite direction.
+    Enumeration of cardinal and intercardinal directions with a property to get the 
+    opposite direction.
     """
     NORTH = 0
     EAST = 1
@@ -28,8 +29,6 @@ class Directions(Enum):
     NORTHWEST = 6
     SOUTHWEST = 7
 
-    
-
     @property
     def opposite(self) -> 'Directions':
         """
@@ -37,11 +36,10 @@ class Directions(Enum):
         Returns:
             Directions: The opposite direction.
         """
-        # 1. Get the integer value of the current member (e.g., self.value for NORTH is 0)
+        # 1. Get the integer value of the current member
+        # (e.g., self.value for # NORTH is 0)
         opposite_value:int = _opposite_map[self.value] # type: ignore
-        
-        # 2. Convert that integer value back into a Directions member (e.g., Directions(2) becomes Directions.SOUTH)
+
+        # 2. Convert that integer value back into a Directions member
+        # (e.g., Directions(2) becomes Directions.SOUTH)
         return Directions(opposite_value)
-
-    
-
