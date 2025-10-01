@@ -3,16 +3,16 @@ Module defining the User class, currently a placeholder.
 """
 from typing import Optional, Dict
 from uuid import uuid4
+from .directions import Directions
 
 class User:
     """
     A placeholder class for User entities in the road network simulation.
     """
-    def __init__(self, mapworld:'Mapworld'):
+    def __init__(self):
         self.id = uuid4()
-        self.position:'Roadspace' = None
+        self.position_uuid:uuid4 = None
         self.heading:Directions = None
-        self.mapworld = mapworld
         self.Directions = Directions()
 
     def teleport(self, roadspace: Roadspace):
