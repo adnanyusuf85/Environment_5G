@@ -1,1 +1,6 @@
 venv
+
+/asphalt/**__pycache__/
+*.pyc
+*.pyd
+*.pyo
