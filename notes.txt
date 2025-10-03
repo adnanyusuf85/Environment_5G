@@ -1,0 +1,9 @@
+- have each user know its position by knowing a roadspace.uuid
+
+- have a table call roadspace_occupancy which is a dictionary like roadspace.uuid:set(users)
+
+- a roadspaces dictionary which contains roadspace.uuid:roadspace
+
+- This way the simultion can access the roadspace for a user by just finding out its roadspace.uuid, and then looking at the roadspaces dictionary
+
+- Also, the the roadspace_occupancy for any roadspace can be queried the same roadspace.uuid
