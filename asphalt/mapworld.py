@@ -7,7 +7,7 @@ from .user import User
 from .roadspace import Roadspace
 from .directions import Directions
 
-class MapWorld:
+class Mapworld:
     """Manages all users, roadspaces, and their relationships."""
 
     def __init__(self):
