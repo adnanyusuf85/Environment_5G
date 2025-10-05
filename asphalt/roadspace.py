@@ -29,7 +29,6 @@ class Roadspace:
         Args:
             direction (Directions): The direction in which to link the neighboring roadspace.   
             neighbor (Roadspace): The neighboring roadspace to link.
-            reciprocal (bool): If True, also link the neighbor back to this roadspace in the opposite direction.        
         """
         self.neighborhood[direction] = neighbor 
     
