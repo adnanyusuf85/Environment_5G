@@ -15,14 +15,15 @@ class Roadspace:
     A Roadspace represents a segment of road with connections to neighboring segments in various directions.
     It is characterized by its type (e.g., GENERIC, INTERSECTION, ROADSEGMENT) and a unique identifier (UUID).
     """
-    def __init__(self, roadspace_type:RoadSpaceType=RoadSpaceType.GENERIC):
-        self.neighborhood: Dict[Directions, Optional[Roadspace]] = {d: None for d in Directions}
+    def __init__(self, roadspace_type:RoadSpaceType=RoadSpaceType.GENERIC, length:int = 1):
         self.uuid: UUID = uuid4()
+        self.neighborhood: Dict[Directions, Optional[UUID]] = {}
         self.roadspace_type: RoadSpaceType = roadspace_type
         self.users: set[User] = set()
+        self.length: int = length 
+        #self.road_condition = smooth() #Future
 
-
-    def set_link_segment(self, direction:Directions, neighbor:'Roadspace', reciprocal:bool=True):
+    def add_neighbor(self, direction:Directions, neighbor:UUID):
         """
         Link this roadspace to a neighboring roadspace in a specified direction.
         Args:
@@ -31,31 +32,18 @@ class Roadspace:
             reciprocal (bool): If True, also link the neighbor back to this roadspace in the opposite direction.        
         """
         self.neighborhood[direction] = neighbor 
-
-        if reciprocal:
-            neighbor.set_link_segment(direction.opposite, self, False)
     
-    def add_user(self, user:User):
-        """
-        Add a user to the road segment.
-        Args:
-            user (User): The user to be added to the road segment.
-        """
-        self.users.add(user)
-        
-    def remove_user(self, user:User):
-        """
-        Remove a user from the road segment.
-        Args:
-            user (User): The user to be removed from the road segment.
-        """
-        self.users.remove(user)
-    
-    def get_neighbors(self) -> Dict[Directions, Optional['Roadspace']] :
+    def get_neighbors(self) -> Dict[Directions, Optional[UUID]] :
        """
        Return the neighbors (roadspace) of this roadspace 
        """ 
-       return self.neighborhood
+       available_neighbors = {}
+
+       for direction, neighbor in self.neighborhood:
+           if (neighbor is not None):
+               available_neighbors[direction] = neighbor
+       
+       return available_neighbors
 
     def exists_neighbor(self, direction:Directions) -> bool:
         """
