@@ -7,6 +7,7 @@ from typing import Optional, Dict
 from .roadspacetype import RoadSpaceType
 from .directions import Directions
 from .user import User
+from custom_types import RoadspaceUUID,UserUUID
 
 
 class Roadspace:
@@ -17,20 +18,22 @@ class Roadspace:
     """
     def __init__(self, roadspace_type:RoadSpaceType=RoadSpaceType.GENERIC, length:int = 1):
         self.uuid: UUID = uuid4()
-        self.neighborhood: Dict[Directions, Optional[UUID]] = {}
-        self.roadspace_type: RoadSpaceType = roadspace_type
-        self.users: set[User] = set()
         self.length: int = length 
+        self.neighborhood: Dict[Directions, Optional[UUID]] = {}
+        self.type: RoadSpaceType = roadspace_type
+        self.ocuppancy_table: set[UserUUID] = set()
+        #self.speed_limit: int = 10 #Future
+        #self.max_occupancy: int = 5 #Future
         #self.road_condition = smooth() #Future
-
-    def add_neighbor(self, direction:Directions, neighbor:UUID):
+    
+    def add_neighbor(self, direction:Directions, neighbor_uuid:UUID):
         """
         Link this roadspace to a neighboring roadspace in a specified direction.
         Args:
             direction (Directions): The direction in which to link the neighboring roadspace.   
             neighbor (Roadspace): The neighboring roadspace to link.
         """
-        self.neighborhood[direction] = neighbor 
+        self.neighborhood[direction] = neighbor_uuid 
     
     def get_neighbors(self) -> Dict[Directions, Optional[UUID]] :
        """
@@ -47,6 +50,12 @@ class Roadspace:
             bool: True if a neighboring roadspace exists in the specified direction, False otherwise.
         """
         return direction in self.neighborhood
+    
+    def add_occupant(self, user_uuid:UserUUID):
+        self.ocuppancy_table.add(user_uuid)
+
+    def remove_occupant(self, user_uuid:UserUUID):
+        self.ocuppancy_table.remove(user_uuid)
         
     def __repr__(self) -> str:
         """Return the developer-friendly string representation of the object."""

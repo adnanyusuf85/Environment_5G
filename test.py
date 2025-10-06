@@ -8,3 +8,8 @@ r1.add_neighbor(Directions.EAST, r2.uuid)
 
 neighbors = r1.get_neighbors()
 print(neighbors)
+
+print("Checking existence check")
+print(r1.exists_neighbor(Directions.EAST))
+
+print(r1.exists_neighbor(Directions.NORTH))

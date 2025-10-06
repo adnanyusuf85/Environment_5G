@@ -1,20 +1,29 @@
 # mapworld.py
 # from __future__ import annotations
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Set, NewType
 import random
 from uuid import UUID
+from networkx import Graph
 from .user import User
 from .roadspace import Roadspace
 from .directions import Directions
+from custom_types import RoadspaceUUID, UserUUID
 
 class Mapworld:
     """Manages all users, roadspaces, and their relationships."""
 
     def __init__(self):
-        self.spaces: Dict[UUID, Roadspace] = {}
-        # The single source of truth for user locations
-        self.user_positions: Dict[UUID, Roadspace] = {}
+        self.roadspaces: Dict[RoadspaceUUID, Roadspace] = {}
+        self.users: Dict[UserUUID, User] = {}
+        self.user_position_table: Dict[UserUUID, RoadspaceUUID] = {}
+        self.graph:Graph = Graph()
 
+    def get_roadspace_users(self, uuid:RoadspaceUUID):
+        return self.roadspace_occupancy_table[uuid]
+    
+    def get_user_position(self, uuid: UserUUID):
+        return self.user_position_table[uuid]
+    
     def add_space(self, space: Roadspace):
         """Adds a roadspace to the world."""
         self.spaces[space.id] = space
@@ -25,10 +34,6 @@ class Mapworld:
             return # No spaces to place user on
         random_space = random.choice(list(self.spaces.values()))
         self.user_positions[user.id] = random_space
-
-    def get_user_position(self, user: User) -> Optional[Roadspace]:
-        """Finds where a specific user is."""
-        return self.user_positions.get(user.id)
 
     def get_users_in_space(self, space: Roadspace) -> List[User]:
         """Finds all users in a specific roadspace (less efficient but flexible)."""
