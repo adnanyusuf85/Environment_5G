@@ -10,21 +10,22 @@ from .directions import Directions
 from custom_types import RoadspaceUUID, UserUUID
 from .map_navigator import MapNavigator
 
-class Mapworld(MapNavigator):
+class Mapworld():
     """Manages all users, roadspaces, and their relationships."""
 
-    def __init__(self):
+    def __init__(self, map_navigator:MapNavigator):
         self.roadspaces: Dict[RoadspaceUUID, Roadspace] = {}
         self.users: Dict[UserUUID, User] = {}
         self.user_position_table: Dict[UserUUID, RoadspaceUUID] = {}
         self.graph:Graph = Graph()
+        self.map_navigator = map_navigator
 
     def get_roadspace_users(self, uuid:RoadspaceUUID):
         return self.roadspace_occupancy_table[uuid]
-    
+
     def get_user_position(self, uuid: UserUUID):
         return self.user_position_table[uuid]
-    
+
     def add_space(self, space: Roadspace):
         """Adds a roadspace to the world."""
         self.spaces[space.id] = space
@@ -61,4 +62,13 @@ class Mapworld(MapNavigator):
     def _get_user_by_id(self, user_id: UUID) -> Optional[User]:
         # This part depends on how you store your main list of users.
         # For this example, we assume you have a way to look them up.
+        pass
+
+    def request_position(self) -> UserUUID:
+        pass
+
+    def request_move(self, user: UserUUID, direction: Directions) -> bool:
+        pass
+
+    def request_navigation_options(self, user: UserUUID) -> Dict[Directions, RoadspaceUUID]:
         pass

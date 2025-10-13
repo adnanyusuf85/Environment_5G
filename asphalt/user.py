@@ -53,6 +53,7 @@ class User():
     ##########################
     # MapNavigator Functions #
     ##########################
+    #
     def join_map(self, map_world: MapNavigator):
         self._map = map_world
 
@@ -66,6 +67,7 @@ class User():
         self._map.request_navigation_options()
 
     def request_shortest_path_to_destination(self, target_position: RoadspaceUUID):
+        raise NotImplementedError()
 
 
     ########################

@@ -16,9 +16,7 @@ class RoadSegment(Roadspace):
     def __init__(self):
         super().__init__(roadspace_type=RoadSpaceType.ROADSEGMENT)
         self.users: Set[User] = set()
-  
-    
-        
+
     def __repr__(self) -> str:
         """Return the developer-friendly string representation of the object."""
         return "RoadSegment"
