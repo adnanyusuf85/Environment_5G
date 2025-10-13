@@ -8,8 +8,9 @@ from .user import User
 from .roadspace import Roadspace
 from .directions import Directions
 from custom_types import RoadspaceUUID, UserUUID
+from .map_navigator import MapNavigator
 
-class Mapworld:
+class Mapworld(MapNavigator):
     """Manages all users, roadspaces, and their relationships."""
 
     def __init__(self):
@@ -52,6 +53,9 @@ class Mapworld:
         if next_position:
             self.user_positions[user.id] = next_position
             print(f"Moved user {user.id} to space {next_position.id}")
+
+    def get_roadspace_neighbors(self, roadspace_uuid: RoadspaceUUID):
+        return self.roadspaces[roadspace_uuid].get_neighbors()
 
     # Helper method might be needed to get user object from ID
     def _get_user_by_id(self, user_id: UUID) -> Optional[User]:
