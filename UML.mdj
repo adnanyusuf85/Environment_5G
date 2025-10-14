@@ -1142,7 +1142,7 @@
 											"font": "Source Code Pro;13;1",
 											"left": 1437,
 											"top": 935,
-											"width": 405.599365234375,
+											"width": 343.199462890625,
 											"height": 13,
 											"text": "Roadspace"
 										},
@@ -1177,7 +1177,7 @@
 									"font": "Source Code Pro;13;0",
 									"left": 1432,
 									"top": 928,
-									"width": 415.599365234375,
+									"width": 353.199462890625,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGZxxk7IwwuCco="
@@ -1214,9 +1214,43 @@
 											"font": "Source Code Pro;13;0",
 											"left": 1437,
 											"top": 958,
-											"width": 405.599365234375,
+											"width": 343.199462890625,
 											"height": 13,
 											"text": "+uuid: RoadspaceUUID",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGZ3uy0FOiPZ34=",
+											"_parent": {
+												"$ref": "AAAAAAGZxxk7IwwyRvo="
+											},
+											"model": {
+												"$ref": "AAAAAAGZ3uyz5uiMiPI="
+											},
+											"font": "Source Code Pro;13;0",
+											"left": 1437,
+											"top": 973,
+											"width": 343.199462890625,
+											"height": 13,
+											"text": "+latitude: float = 0.00",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGZ3uzZ2+jVAqA=",
+											"_parent": {
+												"$ref": "AAAAAAGZxxk7IwwyRvo="
+											},
+											"model": {
+												"$ref": "AAAAAAGZ3uzZyujSkrs="
+											},
+											"font": "Source Code Pro;13;0",
+											"left": 1437,
+											"top": 988,
+											"width": 343.199462890625,
+											"height": 13,
+											"text": "+longitude: float = 0.00",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1230,8 +1264,8 @@
 											},
 											"font": "Source Code Pro;13;0",
 											"left": 1437,
-											"top": 973,
-											"width": 405.599365234375,
+											"top": 1003,
+											"width": 343.199462890625,
 											"height": 13,
 											"text": "+length: int",
 											"horizontalAlignment": 0
@@ -1247,8 +1281,8 @@
 											},
 											"font": "Source Code Pro;13;0",
 											"left": 1437,
-											"top": 988,
-											"width": 405.599365234375,
+											"top": 1018,
+											"width": 343.199462890625,
 											"height": 13,
 											"text": "+max_vehicle_capacity: float",
 											"horizontalAlignment": 0
@@ -1264,8 +1298,8 @@
 											},
 											"font": "Source Code Pro;13;0",
 											"left": 1437,
-											"top": 1003,
-											"width": 405.599365234375,
+											"top": 1033,
+											"width": 343.199462890625,
 											"height": 13,
 											"text": "+speed_limit: float",
 											"horizontalAlignment": 0
@@ -1281,8 +1315,8 @@
 											},
 											"font": "Source Code Pro;13;0",
 											"left": 1437,
-											"top": 1018,
-											"width": 405.599365234375,
+											"top": 1048,
+											"width": 343.199462890625,
 											"height": 13,
 											"text": "+flow_speed: float",
 											"horizontalAlignment": 0
@@ -1298,27 +1332,10 @@
 											},
 											"font": "Source Code Pro;13;0",
 											"left": 1437,
-											"top": 1033,
-											"width": 405.599365234375,
+											"top": 1063,
+											"width": 343.199462890625,
 											"height": 13,
 											"text": "+roadstate: RoadState",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLAttributeView",
-											"_id": "AAAAAAGZzOkzhDheUAU=",
-											"_parent": {
-												"$ref": "AAAAAAGZxxk7IwwyRvo="
-											},
-											"model": {
-												"$ref": "AAAAAAGZzOkzbDhY6PY="
-											},
-											"font": "Source Code Pro;13;0",
-											"left": 1437,
-											"top": 1048,
-											"width": 405.599365234375,
-											"height": 13,
-											"text": "+neighborhood: Dict[Directions, Optional[UUID]] = {}",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1332,8 +1349,8 @@
 											},
 											"font": "Source Code Pro;13;0",
 											"left": 1437,
-											"top": 1063,
-											"width": 405.599365234375,
+											"top": 1078,
+											"width": 343.199462890625,
 											"height": 13,
 											"text": "+rf_profiles: Dict[RFProfileUUID, RFProfile]",
 											"horizontalAlignment": 0
@@ -1342,8 +1359,8 @@
 									"font": "Source Code Pro;13;0",
 									"left": 1432,
 									"top": 953,
-									"width": 415.599365234375,
-									"height": 128
+									"width": 353.199462890625,
+									"height": 143
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -1376,8 +1393,8 @@
 									],
 									"font": "Source Code Pro;13;0",
 									"left": 1432,
-									"top": 1081,
-									"width": 415.599365234375,
+									"top": 1096,
+									"width": 353.199462890625,
 									"height": 10
 								},
 								{
@@ -1417,8 +1434,8 @@
 							"containerChangeable": true,
 							"left": 1432,
 							"top": 928,
-							"width": 415.599365234375,
-							"height": 163,
+							"width": 353.199462890625,
+							"height": 178,
 							"autoResize": true,
 							"nameCompartment": {
 								"$ref": "AAAAAAGZxxk7Iwwtu3U="
@@ -2369,7 +2386,7 @@
 											"font": "Source Code Pro;13;3",
 											"left": 13,
 											"top": 495,
-											"width": 460.19927978515625,
+											"width": 389.9993896484375,
 											"height": 13,
 											"text": "NetworkUser"
 										},
@@ -2404,7 +2421,7 @@
 									"font": "Source Code Pro;13;0",
 									"left": 8,
 									"top": 488,
-									"width": 470.19927978515625,
+									"width": 399.9993896484375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGZx7b5u8CnQsU="
@@ -2441,7 +2458,7 @@
 											"font": "Source Code Pro;13;0",
 											"left": 13,
 											"top": 518,
-											"width": 460.19927978515625,
+											"width": 389.9993896484375,
 											"height": 13,
 											"text": "+location: RoadspaceUUID",
 											"horizontalAlignment": 0
@@ -2458,7 +2475,7 @@
 											"font": "Source Code Pro;13;0",
 											"left": 13,
 											"top": 533,
-											"width": 460.19927978515625,
+											"width": 389.9993896484375,
 											"height": 13,
 											"text": "+heading: Directions",
 											"horizontalAlignment": 0
@@ -2475,7 +2492,7 @@
 											"font": "Source Code Pro;13;0",
 											"left": 13,
 											"top": 548,
-											"width": 460.19927978515625,
+											"width": 389.9993896484375,
 											"height": 13,
 											"text": "+mobility_profile: MobilityModel",
 											"horizontalAlignment": 0
@@ -2492,7 +2509,7 @@
 											"font": "Source Code Pro;13;0",
 											"left": 13,
 											"top": 563,
-											"width": 460.19927978515625,
+											"width": 389.9993896484375,
 											"height": 13,
 											"text": "+navigation_API: NavigationInterface",
 											"horizontalAlignment": 0
@@ -2509,9 +2526,9 @@
 											"font": "Source Code Pro;13;0",
 											"left": 13,
 											"top": 578,
-											"width": 460.19927978515625,
+											"width": 389.9993896484375,
 											"height": 13,
-											"text": "+environment_membership_API: EnvironmentMembershipInterface",
+											"text": "+road_environment: RoadEnvironment",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2526,7 +2543,7 @@
 											"font": "Source Code Pro;13;0",
 											"left": 13,
 											"top": 593,
-											"width": 460.19927978515625,
+											"width": 389.9993896484375,
 											"height": 13,
 											"text": "+active_rf_profile: RFProfile",
 											"horizontalAlignment": 0
@@ -2535,7 +2552,7 @@
 									"font": "Source Code Pro;13;0",
 									"left": 8,
 									"top": 513,
-									"width": 470.19927978515625,
+									"width": 399.9993896484375,
 									"height": 98
 								},
 								{
@@ -2560,7 +2577,7 @@
 											"font": "Source Code Pro;13;0",
 											"left": 13,
 											"top": 616,
-											"width": 460.19927978515625,
+											"width": 389.9993896484375,
 											"height": 13,
 											"text": "+set_environment(environment: RoadEnvironment)",
 											"horizontalAlignment": 0
@@ -2595,7 +2612,7 @@
 											"font": "Source Code Pro;13;0",
 											"left": 13,
 											"top": 631,
-											"width": 460.19927978515625,
+											"width": 389.9993896484375,
 											"height": 13,
 											"text": "+update_rf_profile(rf_profile_uuid: RFProfileUUID)",
 											"horizontalAlignment": 0
@@ -2604,7 +2621,7 @@
 									"font": "Source Code Pro;13;0",
 									"left": 8,
 									"top": 611,
-									"width": 470.19927978515625,
+									"width": 399.9993896484375,
 									"height": 38
 								},
 								{
@@ -2644,7 +2661,7 @@
 							"containerChangeable": true,
 							"left": 8,
 							"top": 488,
-							"width": 470.19927978515625,
+							"width": 399.9993896484375,
 							"height": 161,
 							"autoResize": true,
 							"nameCompartment": {
@@ -5984,8 +6001,8 @@
 											},
 											"visible": false,
 											"font": "Source Code Pro;13;0",
-											"left": 640,
-											"top": 48,
+											"left": 32,
+											"top": 64,
 											"height": 13
 										},
 										{
@@ -5995,9 +6012,9 @@
 												"$ref": "AAAAAAGZzpAcYIT9CsA="
 											},
 											"font": "Source Code Pro;13;1",
-											"left": 981,
-											"top": 119,
-											"width": 374.3994140625,
+											"left": 677,
+											"top": 127,
+											"width": 569.3991088867188,
 											"height": 13,
 											"text": "TrafficSenseInterface"
 										},
@@ -6009,8 +6026,8 @@
 											},
 											"visible": false,
 											"font": "Source Code Pro;13;0",
-											"left": 640,
-											"top": 48,
+											"left": 32,
+											"top": 64,
 											"width": 129.599853515625,
 											"height": 13,
 											"text": "(from Model)"
@@ -6023,16 +6040,16 @@
 											},
 											"visible": false,
 											"font": "Source Code Pro;13;0",
-											"left": 640,
-											"top": 48,
+											"left": 32,
+											"top": 64,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Source Code Pro;13;0",
-									"left": 976,
-									"top": 112,
-									"width": 384.3994140625,
+									"left": 672,
+									"top": 120,
+									"width": 579.3991088867188,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGZzpAcYIT+uiM="
@@ -6057,9 +6074,9 @@
 										"$ref": "AAAAAAGZzpAcXoT6cK4="
 									},
 									"font": "Source Code Pro;13;0",
-									"left": 976,
-									"top": 137,
-									"width": 384.3994140625,
+									"left": 672,
+									"top": 145,
+									"width": 579.3991088867188,
 									"height": 10
 								},
 								{
@@ -6082,18 +6099,18 @@
 												"$ref": "AAAAAAGZ0aWLJcwchFY="
 											},
 											"font": "Source Code Pro;13;0",
-											"left": 981,
-											"top": 152,
-											"width": 374.3994140625,
+											"left": 677,
+											"top": 160,
+											"width": 569.3991088867188,
 											"height": 13,
-											"text": "+get_trafficstate_segment(direction: Directions)",
+											"text": "+get_trafficstate_segment(location: RoadspaceUUID, direction: Directions)",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Source Code Pro;13;0",
-									"left": 976,
-									"top": 147,
-									"width": 384.3994140625,
+									"left": 672,
+									"top": 155,
+									"width": 579.3991088867188,
 									"height": 23
 								},
 								{
@@ -6107,8 +6124,8 @@
 									},
 									"visible": false,
 									"font": "Source Code Pro;13;0",
-									"left": 320,
-									"top": 24,
+									"left": 16,
+									"top": 32,
 									"width": 10,
 									"height": 10
 								},
@@ -6123,17 +6140,17 @@
 									},
 									"visible": false,
 									"font": "Source Code Pro;13;0",
-									"left": 320,
-									"top": 24,
+									"left": 16,
+									"top": 32,
 									"width": 10,
 									"height": 10
 								}
 							],
 							"font": "Source Code Pro;13;0",
 							"containerChangeable": true,
-							"left": 976,
-							"top": 112,
-							"width": 384.3994140625,
+							"left": 672,
+							"top": 120,
+							"width": 579.3991088867188,
 							"height": 58,
 							"autoResize": true,
 							"nameCompartment": {
@@ -6173,8 +6190,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 1098,
-									"top": 209,
+									"left": 913,
+									"top": 481,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -6194,8 +6211,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 1083,
-									"top": 209,
+									"left": 898,
+									"top": 481,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -6215,8 +6232,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 1127,
-									"top": 210,
+									"left": 943,
+									"top": 482,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -6231,10 +6248,10 @@
 								"$ref": "AAAAAAGZzpAcX4T81ME="
 							},
 							"tail": {
-								"$ref": "AAAAAAGZyBbaaFTF+pE="
+								"$ref": "AAAAAAGZxzKoViZTI7M="
 							},
 							"lineStyle": 2,
-							"points": "1113:264;1113:169",
+							"points": "1000:488;928:488;928:177",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGZzpClRYWdY+E="
@@ -7157,9 +7174,9 @@
 							"_parent": {
 								"$ref": "AAAAAAGZwXn4qD19fME="
 							},
-							"name": "environment_membership_API",
+							"name": "road_environment",
 							"type": {
-								"$ref": "AAAAAAGZzNxoqi4yEg0="
+								"$ref": "AAAAAAGZxzKoViZR1sE="
 							}
 						},
 						{
@@ -8274,6 +8291,26 @@
 						},
 						{
 							"_type": "UMLAttribute",
+							"_id": "AAAAAAGZ3uyz5uiMiPI=",
+							"_parent": {
+								"$ref": "AAAAAAGZxxk7IgwqB60="
+							},
+							"name": "latitude",
+							"type": "float",
+							"defaultValue": "0.00"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAGZ3uzZyujSkrs=",
+							"_parent": {
+								"$ref": "AAAAAAGZxxk7IgwqB60="
+							},
+							"name": "longitude",
+							"type": "float",
+							"defaultValue": "0.00"
+						},
+						{
+							"_type": "UMLAttribute",
 							"_id": "AAAAAAGZzOjFRDecW4Y=",
 							"_parent": {
 								"$ref": "AAAAAAGZxxk7IgwqB60="
@@ -8318,16 +8355,6 @@
 							"type": {
 								"$ref": "AAAAAAGZzhoZjGFxu3c="
 							}
-						},
-						{
-							"_type": "UMLAttribute",
-							"_id": "AAAAAAGZzOkzbDhY6PY=",
-							"_parent": {
-								"$ref": "AAAAAAGZxxk7IgwqB60="
-							},
-							"name": "neighborhood",
-							"type": "Dict[Directions, Optional[UUID]]",
-							"defaultValue": "{}"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9428,7 +9455,7 @@
 								"$ref": "AAAAAAGZx/vB4PlCnqs="
 							},
 							"source": {
-								"$ref": "AAAAAAGZx/vB4PlCnqs="
+								"$ref": "AAAAAAGZxzKoViZR1sE="
 							},
 							"target": {
 								"$ref": "AAAAAAGZzpAcXoT6cK4="
@@ -9818,6 +9845,15 @@
 								{
 									"_type": "UMLParameter",
 									"_id": "AAAAAAGZ0aa9HcxQDRs=",
+									"_parent": {
+										"$ref": "AAAAAAGZ0aWLJcwchFY="
+									},
+									"name": "location",
+									"type": "RoadspaceUUID"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGZ3qvwDOLW4GI=",
 									"_parent": {
 										"$ref": "AAAAAAGZ0aWLJcwchFY="
 									},
