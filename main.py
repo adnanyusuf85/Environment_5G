@@ -1,13 +1,5 @@
-from .rfworld import CoverageMap
+import networkx as nx
 
-area_map = CoverageMap()
-road_spaces = []
+G = nx.grid_2d_graph(5,5)
+print(G.nodes)
 
-
-# sinr, serving station, what neighbors are connected in all directions
-# an intersection is a deciding point for which way to go
-# at each place the AV can detect SINR/RSRP of neighbors
-for i in range(number_of_measurements):
-    # number_of_measurements comprises of number of measurments plus number of intersections plus 
-    # 
-area_map.add_tile()
