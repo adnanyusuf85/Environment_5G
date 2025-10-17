@@ -1,5 +1,6 @@
 import networkx as nx
-from heapq import heapify
+from typing import List
+import heapq 
 
 def add_traffic_signals(graph, traffic_signals):
     graph.add_node((5,0))
@@ -13,11 +14,14 @@ def add_pedestrians(graph, pedestrians):
 def assign_destinations(autonomous_vehicles):
     pass
 
+class Event:
+    def action(self):
+        pass
 
 class Simulator:
 
-    def __init__():
-        self.event_queue = []
+    def __init__(self):
+        self.event_queue:List = heapq.heapify([])
 
     def load_environment(roadspace_environment):
         vehicles_events(world_environment.network_users)
@@ -28,10 +32,11 @@ class Simulator:
     def initialize_entities():
         pass
 
-    def step():
-        heapify(self.event_queue)
+    def step(self):
+        event = heapq.heappop(self.event_queue)
 
-    def enlist_publisher
+    def add_event(self, event:Event):
+        heapq.heappush(self.event_queue, event)
 
 
 
