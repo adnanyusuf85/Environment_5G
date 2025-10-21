@@ -4,3 +4,4 @@ from uuid import UUID
 RoadspaceUUID = NewType('RoadspaceUUID', UUID)
 UserUUID = NewType('UserUUID', UUID)
 EventUUID = NewType('EventUUID', UUID)
+WorkerUUID = NewType('WorkerUUID', UUID)

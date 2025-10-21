@@ -1,15 +1,15 @@
-from asphalt.roadspace import Roadspace
-from asphalt.directions import Directions
+from simulator import Simulator
+from event import Event
 
-r1 = Roadspace()
-r2 = Roadspace()
+event_a = Event(timestamp=10, event_id="event_1", worker_uuid="worker_1")
+event_b = Event(timestamp=5, event_id="event_2", worker_uuid="worker_2")
+event_c = Event(timestamp=20, event_id="event_3", worker_uuid="worker_3")
 
-r1.add_neighbor(Directions.EAST, r2.uuid)
+sim = Simulator()
+sim.add_event_to_queue(event_c)
+sim.add_event_to_queue(event_b)
+sim.add_event_to_queue(event_a)
 
-neighbors = r1.get_neighbors()
-print(neighbors)
-
-print("Checking existence check")
-print(r1.exists_neighbor(Directions.EAST))
-
-print(r1.exists_neighbor(Directions.NORTH))
+sim.step()
+sim.step()
+sim.step()

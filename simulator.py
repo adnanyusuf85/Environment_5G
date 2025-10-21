@@ -1,34 +1,46 @@
-from typing import List
+from typing import List, Optional
+from heapq import heappush, heappop
 import heapq
+# from simulator_interface import SimulatorInterface
+from simulation_worker import SimulationWorker
+from event import Event
 from simulator_interface import SimulatorInterface
-import custom_types
+from custom_types import WorkerUUID, EventUUID
 
-class Simulator:
+class Simulator(SimulatorInterface):
 
     def __init__(self):
         # self.event_queue:List = heapq.heapify([])
-        self._simulation_workers: List[SimulationWorker]= None
-        self._event_queue: List[Event]
-        self.interface: SimulatorInterface = SimulatorInterface(self)
+        self._simulation_workers: List[SimulationWorker] 
+        self._event_queue: List[Event] = []
+        # self.interface: SimulatorInterface = SimulatorInterface(self)
 
-    def load_environment(self, simulator_environment):
-        self._simulator_environment = simulator_environment
+    def load_simulation_parameters(self, simulation_parameters: dict):
+        self._simulation_parameters = simulation_parameters
 
-    def start(self):
-        self._simulator_environment.start()
+    def start_simulation(self):
+        pass
 
-    def stop(self):
-        self._simulator_environment.stop()
-
-    def restart(self):
-        self._simulator_environment.restart()
+    def stop_simulation(self):
+        pass
 
     def step(self):
-        # event = heapq.heappop(self.event_queue)
-        self._simulator_environment.step()
+        heappop(self._event_queue).execute()
 
-    def add_event_to_queue(self, worker_uuid: WorkerUUID, event:EventUUID):
-        heapq.heappush(self._event_queue)
+    # SimulatorInterface methods
+    def register_event(self, worker_uuid: WorkerUUID, event: Event):
+        pass
 
-    def remove_event_from_queue(self, event:EventUUID):
-        # remove event where event.id = event.id
+    def deregister_event(self, event:Event):
+        pass
+
+    def notify_status(self, event_uuid: EventUUID, event_status: str):
+        pass
+
+    def add_worker(self, worker: SimulationWorker):
+        self._simulation_workers.append(worker)
+
+    def remove_worker(self, worker: SimulationWorker):
+        self._simulation_workers.remove(worker)
+
+    # ######################################## 
