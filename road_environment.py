@@ -1,6 +1,6 @@
 from event_emitter import SimulatorCog
 
-class RoadEnvironment(SimulatorCog, TrafficSenseInterface):
+class RoadEnvironment(SimulatorWorker, TrafficSenseInterface):
 
     def __init__(self):
         self.initialize_environment()
