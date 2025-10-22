@@ -28,7 +28,7 @@ class Simulator(SimulatorInterface):
         heappop(self._event_queue).execute()
 
     # SimulatorInterface methods
-    def register_event(self, worker_uuid: WorkerUUID, event: Event):
+    def register_event(self, worker_uuid: WorkerUUID, event_uuid: EventUUID):
         pass
 
     def deregister_event(self, event:Event):
