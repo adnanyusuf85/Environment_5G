@@ -1,9 +1,9 @@
 from uuid import uuid4
-from event_emitter import SimulatorCog
+from simulation_worker import SimulationWorker
 from custom_types import RoadspaceUUID, UserUUID, EventUUID
 from directions import Directions
 
-class NetworkUser(SimulatorCog):
+class NetworkUser(SimulationWorker):
 
     def __init__(self):
         self.id: UserUUID = uuid4()
@@ -13,6 +13,7 @@ class NetworkUser(SimulatorCog):
         self.navigation_api: NavigationInterface
         self.road_environment: RoadEnvironment
         self._active_rf_profile: RFProfile
+        super().???????????????????
 
     def join_environment(self, road_environment: RoadEnvironment):
         self.road_environment = road_environment
