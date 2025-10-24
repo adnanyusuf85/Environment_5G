@@ -13,7 +13,7 @@ class NetworkUser(SimulationWorker):
         self.navigation_api: NavigationInterface
         self.road_environment: RoadEnvironment
         self._active_rf_profile: RFProfile
-        super().???????????????????
+        # super().???????????????????
 
     def join_environment(self, road_environment: RoadEnvironment):
         self.road_environment = road_environment
