@@ -5,7 +5,10 @@ class Actable:
 
     def __init__(self, id):
         self.id = id
+        print("Starting Actable with ID", self.id)
 
+    def act(self):
+        print("Actable with ID", self.id, "doing something...")
 
 class Simulator:
     def __init__(self):
@@ -14,21 +17,24 @@ class Simulator:
 
     def add_actable(self, actable:Actable):
         self.actables.append(actable)
-        print("Adding actable with ID: ", actable.id)
+        print("Adding actable with ID", actable.id)
 
     def remove_actable(self, id):
-        if (self.actable.id == id):
-            pass
+        for actable in self.actables:
+            if (actable.id == id):
+                self.actables.remove(actable)
 
+    def step(self):
+        for actable in self.actables:
+            actable.act()
 
 class Worker(Actable):
 
-    def __init__(self, id):
-        super().__init__(id)
-        print("Starting worker with ID: ", self.id)
-
     def set_simulator(self, simulator:Simulator):
         self.simulator = simulator
+
+    def act(self):
+        print("Worker with ID", self.id, "working")
 
 
 if __name__ == '__main__':
@@ -41,3 +47,11 @@ if __name__ == '__main__':
 
     simulator.add_actable(worker1)
     simulator.add_actable(worker2)
+
+    simulator.step()
+
+    simulator.remove_actable(worker1.id)
+
+    print("Removed one actable")
+
+    simulator.step()

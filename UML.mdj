@@ -6442,7 +6442,7 @@
 											"top": 630,
 											"width": 366.59942626953125,
 											"height": 13,
-											"text": "+simulator: SimulatorInterface",
+											"text": "+simulator_interface: SimulatorInterface",
 											"horizontalAlignment": 0
 										},
 										{
@@ -7432,7 +7432,7 @@
 											"top": 304,
 											"width": 436.87109375,
 											"height": 13,
-											"text": "+simulation_workers",
+											"text": "+simulator_actables: List[SimulatorActable]",
 											"horizontalAlignment": 0
 										}
 									],
@@ -8015,7 +8015,7 @@
 											"top": 503,
 											"width": 116.99981689453125,
 											"height": 13,
-											"text": "SimulatorWorker"
+											"text": "SimulatorEntity"
 										},
 										{
 											"_type": "LabelView",
@@ -11681,7 +11681,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGZ+onpmgpHXLQ="
 							},
-							"name": "simulator",
+							"name": "simulator_interface",
 							"type": {
 								"$ref": "AAAAAAGZ8GHEMlmrs2E="
 							}
@@ -12017,7 +12017,8 @@
 											"_parent": {
 												"$ref": "AAAAAAGaMRn3yUgrz3E="
 											},
-											"name": "uuid"
+											"name": "uuid",
+											"type": ""
 										},
 										{
 											"_type": "UMLParameter",
@@ -12025,7 +12026,8 @@
 											"_parent": {
 												"$ref": "AAAAAAGaMRn3yUgrz3E="
 											},
-											"name": "simulator_worker"
+											"name": "simulator_worker",
+											"type": ""
 										}
 									]
 								},
@@ -12043,7 +12045,8 @@
 											"_parent": {
 												"$ref": "AAAAAAGaMRq5DkjTiLY="
 											},
-											"name": "uuid"
+											"name": "uuid",
+											"type": ""
 										}
 									]
 								}
@@ -12257,8 +12260,8 @@
 									"_parent": {
 										"$ref": "AAAAAAGZwYK6wkKGru0="
 									},
-									"name": "simulation_workers",
-									"type": ""
+									"name": "simulator_actables",
+									"type": "List[SimulatorActable]"
 								}
 							],
 							"operations": [
@@ -12564,7 +12567,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "SimulatorWorker",
+					"name": "SimulatorEntity",
 					"isAbstract": true
 				}
 			]
