@@ -6,7 +6,7 @@ from event import Event
 from simulator_interface import SimulatorInterface
 from custom_types import WorkerUUID, EventUUID
 from event_status import EventStatus
-from simulation_worker import SimulationWorker
+from simulation_subscriber import SimulationWorker
 
 class Simulator(SimulatorInterface):
 

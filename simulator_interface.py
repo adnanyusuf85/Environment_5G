@@ -2,12 +2,12 @@ from abc import ABC, abstractmethod
 from event import Event
 from custom_types import UUID, EventUUID, WorkerUUID
 from event_status import EventStatus
-from simulation_worker import SimulationWorker
+from simulator_entity import SimulatorEntity
 
 class SimulatorInterface:
 
     @abstractmethod
-    def add_simulation_worker(self, worker: SimulationWorker):
+    def add_simulation_worker(self, worker: SimulatorEntity):
         pass
 
     @abstractmethod
