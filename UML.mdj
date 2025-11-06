@@ -6529,6 +6529,7 @@
 											"model": {
 												"$ref": "AAAAAAGaSrTOf549DoQ="
 											},
+											"visible": false,
 											"fillColor": "#00d369",
 											"font": "Source Code Pro;13;0",
 											"left": 893,
@@ -6550,7 +6551,7 @@
 											"fillColor": "#00d369",
 											"font": "Source Code Pro;13;0",
 											"left": 893,
-											"top": 670,
+											"top": 655,
 											"width": 460.19927978515625,
 											"height": 13,
 											"text": "+register_event(event_uuid: UUID)",
@@ -6568,7 +6569,7 @@
 											"fillColor": "#00d369",
 											"font": "Source Code Pro;13;0",
 											"left": 893,
-											"top": 685,
+											"top": 670,
 											"width": 460.19927978515625,
 											"height": 13,
 											"text": "+deregister_event(event_uuid: UUID)",
@@ -6586,7 +6587,7 @@
 											"fillColor": "#00d369",
 											"font": "Source Code Pro;13;0",
 											"left": 893,
-											"top": 700,
+											"top": 685,
 											"width": 460.19927978515625,
 											"height": 13,
 											"text": "+notify_status(event_uuid: UUID, event_status: EventStatus)",
@@ -6604,7 +6605,7 @@
 											"fillColor": "#00d369",
 											"font": "Source Code Pro;13;0",
 											"left": 893,
-											"top": 715,
+											"top": 700,
 											"width": 460.19927978515625,
 											"height": 13,
 											"text": "+subscribe_simulator(simulator: SimulatorInterface)",
@@ -6622,7 +6623,7 @@
 											"fillColor": "#00d369",
 											"font": "Source Code Pro;13;0",
 											"left": 893,
-											"top": 730,
+											"top": 715,
 											"width": 460.19927978515625,
 											"height": 13,
 											"text": "+unsubscribe_simulator()",
@@ -6634,7 +6635,7 @@
 									"left": 888,
 									"top": 648,
 									"width": 470.19927978515625,
-									"height": 100
+									"height": 85
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",

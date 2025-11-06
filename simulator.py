@@ -4,16 +4,16 @@ import heapq
 # from simulator_interface import SimulatorInterface
 from event import Event
 from simulator_interface import SimulatorInterface
-from custom_types import WorkerUUID, EventUUID
+from custom_types import WorkerUUID, EventUUID, SimulatorEntityUUID
 from event_status import EventStatus
-from simulation_subscriber import SimulationWorker
+from simulator_entity import SimulatorEntity
 
 class Simulator(SimulatorInterface):
 
     def __init__(self):
         # self._simulation_workers: List[SimulationWorker]
         self._event_queue: List[Event] = []
-        self._simulation_workers: dict[WorkerUUID, SimulationWorker] = {}
+        self._simulation_entities: dict[WorkerUUID, SimulatorEntity] = {}
         # self.interface: SimulatorInterface = SimulatorInterface(self)
 
     def load_simulation_parameters(self, simulation_parameters: dict):
@@ -30,11 +30,11 @@ class Simulator(SimulatorInterface):
         print("Simulation step...\n")
 
     # SimulatorInterface methods
-    def add_simulation_worker(self, worker: SimulationWorker):
-        self._simulation_workers[worker.id] = worker
+    def add_simulation_entity(self, simulator_entity: SimulatorEntity):
+        self._simulation_entities[simulator_entity.id] = simulator_entity
 
-    def remove_simulation_worker(self, worker_uuid: WorkerUUID):
-        self._simulation_workers(worker_uuid).pop()
+    def remove_simulation_entity(self, simulator_entity_uuid: SimulatorEntityUUID):
+        self._simulation_entities(simulator_entity_uuid).pop()
 
     def register_event(self, worker_uuid: WorkerUUID, event_uuid: EventUUID):
         pass
