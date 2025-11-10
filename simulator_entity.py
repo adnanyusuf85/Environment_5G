@@ -1,15 +1,14 @@
-from typing import Dict
+from typing import Dict, Optional, cast
 from custom_types import EventUUID
 from event import Event
-from simulator_interface import SimulatorInterface
 from custom_types import SimulatorEntityUUID
+from uuid import UUID, uuid4
 
 class SimulatorEntity:
 
     def __init__(self):
-        self.uuid:SimulatorEntityUUID = None
-        self.simulator_interface:SimulatorInterface = None
-        self._events:Dict[EventUUID, Event]
+        self.uuid:SimulatorEntityUUID = cast(SimulatorEntityUUID,UUID(int=0))
+        self._events:Dict[UUID, Event] = dict()
 
     def act(self, event_uuid:EventUUID):
         self._events[event_uuid].execute()
@@ -23,11 +22,7 @@ class SimulatorEntity:
         # self.simulator_interface.deregister_event(self.id, event_uuid)
 
     def add_event_to_queue(self, event:Event):
-        self._events[event.worker_uuid] = event
+        self._events[event.entity_uuid] = event
 
     def remove_event_from_queue(self, event_uuid: EventUUID):
         del self._events[event_uuid]
-
-    def check_simulator_interface(self):
-        if(self.simulator_interface == None):
-            raise TypeError("Simulator Interface not set, cannot perform operation")
