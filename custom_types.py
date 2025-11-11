@@ -1,8 +1,8 @@
 from typing import NewType
 from uuid import UUID
 
-RoadspaceUUID = NewType('RoadspaceUUID', UUID)
-UserUUID = NewType('UserUUID', UUID)
-EventUUID = NewType('EventUUID', UUID)
-WorkerUUID = NewType('WorkerUUID', UUID)
-SimulatorEntityUUID = NewType('SimulatorEntityUUID', UUID)
+RoadspaceUUID = UUID
+UserUUID = UUID
+EventUUID = UUID
+WorkerUUID = UUID
+SimulatorEntityUUID = UUID

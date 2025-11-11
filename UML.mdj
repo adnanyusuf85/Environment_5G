@@ -7052,7 +7052,7 @@
 											"top": 139,
 											"width": 624.1015625,
 											"height": 13,
-											"text": "+register_event(entity_uuid: EntityUUID, event_uuid: EventUUID)",
+											"text": "+register_event(entity_uuid: EntityUUID, event: Event)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -7918,7 +7918,7 @@
 									"visible": false,
 									"font": "Source Code Pro;13;0",
 									"left": 1079,
-									"top": 575,
+									"top": 590,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -7939,7 +7939,7 @@
 									"visible": null,
 									"font": "Source Code Pro;13;0",
 									"left": 1064,
-									"top": 575,
+									"top": 590,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -7960,7 +7960,7 @@
 									"visible": false,
 									"font": "Source Code Pro;13;0",
 									"left": 1108,
-									"top": 576,
+									"top": 591,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -7978,7 +7978,7 @@
 								"$ref": "AAAAAAGZ+onpmgpJthY="
 							},
 							"lineStyle": 2,
-							"points": "1094:600;1094:565",
+							"points": "1094:600;1094:595",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGaDPlDxtnp3Ms="
@@ -8252,13 +8252,47 @@
 											"height": 13,
 											"text": "+act(event_uuid: EventUUID)",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGacQTMZZdx08c=",
+											"_parent": {
+												"$ref": "AAAAAAGaMSV3VUvJ9Wg="
+											},
+											"model": {
+												"$ref": "AAAAAAGacQTMRpdoUF4="
+											},
+											"font": "Source Code Pro;13;0",
+											"left": 893,
+											"top": 563,
+											"width": 374.3994140625,
+											"height": 13,
+											"text": "+add_event_to_queue(event: Event)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGacQUgGJgci6U=",
+											"_parent": {
+												"$ref": "AAAAAAGaMSV3VUvJ9Wg="
+											},
+											"model": {
+												"$ref": "AAAAAAGacQUgBZgT83Y="
+											},
+											"font": "Source Code Pro;13;0",
+											"left": 893,
+											"top": 578,
+											"width": 374.3994140625,
+											"height": 13,
+											"text": "+remove_event_from_queue(event_uuid: EventUUID)",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Source Code Pro;13;0",
 									"left": 888,
 									"top": 543,
 									"width": 384.3994140625,
-									"height": 23
+									"height": 53
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -8298,7 +8332,7 @@
 							"left": 888,
 							"top": 480,
 							"width": 384.3994140625,
-							"height": 86,
+							"height": 116,
 							"nameCompartment": {
 								"$ref": "AAAAAAGaMSV3VEvDkQ8="
 							},
@@ -12144,8 +12178,8 @@
 											"_parent": {
 												"$ref": "AAAAAAGZ+kVpnwLZ75Y="
 											},
-											"name": "event_uuid",
-											"type": "EventUUID"
+											"name": "event",
+											"type": "Event"
 										}
 									]
 								},
@@ -12866,6 +12900,44 @@
 									"_id": "AAAAAAGaSqEjjJsHWXY=",
 									"_parent": {
 										"$ref": "AAAAAAGaSqEeFprindI="
+									},
+									"name": "event_uuid",
+									"type": "EventUUID"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGacQTMRpdoUF4=",
+							"_parent": {
+								"$ref": "AAAAAAGaMSV3VEvAHqY="
+							},
+							"name": "add_event_to_queue",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGacQUS75exxcE=",
+									"_parent": {
+										"$ref": "AAAAAAGacQTMRpdoUF4="
+									},
+									"name": "event",
+									"type": "Event"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGacQUgBZgT83Y=",
+							"_parent": {
+								"$ref": "AAAAAAGaMSV3VEvAHqY="
+							},
+							"name": "remove_event_from_queue",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGacQVIxZhQA+A=",
+									"_parent": {
+										"$ref": "AAAAAAGacQUgBZgT83Y="
 									},
 									"name": "event_uuid",
 									"type": "EventUUID"

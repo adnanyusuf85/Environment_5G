@@ -1,5 +1,5 @@
 from uuid import uuid4
-from simulation_subscriber import SimulationWorker
+from simulator_subscriber import SimulationWorker
 from custom_types import RoadspaceUUID, UserUUID, EventUUID
 from directions import Directions
 

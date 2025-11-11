@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import List, Optional, Tuple
 from heapq import heappush, heappop
 import heapq
 # from simulator_interface import SimulatorInterface
@@ -12,8 +12,8 @@ class Simulator(SimulatorInterface):
 
     def __init__(self):
         # self._simulation_workers: List[SimulationWorker]
-        self._event_queue: List[Event] = []
-        self._simulation_entities: dict[WorkerUUID, SimulatorEntity] = {}
+        self._event_queue: List[Tuple[int,Event]] = []
+        self._simulation_entities: dict[SimulatorEntityUUID, SimulatorEntity] = {}
         # self.interface: SimulatorInterface = SimulatorInterface(self)
 
     def load_simulation_parameters(self, simulation_parameters: dict):
@@ -26,18 +26,23 @@ class Simulator(SimulatorInterface):
         print("Stopping simulation...\n")
 
     def step(self):
-        heappop(self._event_queue).execute()
+        _, next_event = heappop(self._event_queue)
+        next_event.execute()
         print("Simulation step...\n")
 
     # SimulatorInterface methods
     def add_simulation_entity(self, simulator_entity: SimulatorEntity):
-        self._simulation_entities[simulator_entity.id] = simulator_entity
+        if simulator_entity.uuid is None:
+            raise ValueError("Simulator entity must have a UUID before being added to the simulator.")
+        self._simulation_entities[simulator_entity.uuid] = simulator_entity
 
     def remove_simulation_entity(self, simulator_entity_uuid: SimulatorEntityUUID):
-        self._simulation_entities(simulator_entity_uuid).pop()
+        self._simulation_entities.pop(simulator_entity_uuid)
 
-    def register_event(self, worker_uuid: WorkerUUID, event_uuid: EventUUID):
-        pass
+    def register_event(self, simulator_entity_uuid: SimulatorEntityUUID, event: Event):
+        if simulator_entity_uuid not in self._simulation_entities:
+            raise ValueError("Simulator entity not found in simulator.")
+        heapq.heappush(self._event_queue, (event.timestamp, event))
 
     def deregister_event(self, event:Event):
         pass

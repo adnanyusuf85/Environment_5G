@@ -1,21 +1,21 @@
 from abc import ABC, abstractmethod
 from event import Event
-from custom_types import UUID, EventUUID, WorkerUUID
+from custom_types import UUID, EventUUID, WorkerUUID, SimulatorEntityUUID
 from event_status import EventStatus
 from simulator_entity import SimulatorEntity
 
 class SimulatorInterface:
 
     @abstractmethod
-    def add_simulation_worker(self, worker: SimulatorEntity):
+    def add_simulation_entity(self, simulator_entity: SimulatorEntity):
         pass
 
     @abstractmethod
-    def remove_simulation_worker(self, worker_uuid: WorkerUUID):
+    def remove_simulation_entity(self, simulator_entity_uuid: SimulatorEntityUUID):
         pass
 
     @abstractmethod
-    def register_event(self, worker_uuid: WorkerUUID, event_uuid: EventUUID):
+    def register_event(self, simulator_entity_uuid: SimulatorEntityUUID, event: Event):
         pass
 
     @abstractmethod

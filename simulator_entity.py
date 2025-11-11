@@ -7,7 +7,7 @@ from uuid import UUID, uuid4
 class SimulatorEntity:
 
     def __init__(self):
-        self.uuid:SimulatorEntityUUID = cast(SimulatorEntityUUID,UUID(int=0))
+        self.uuid:SimulatorEntityUUID = uuid4()
         self._events:Dict[UUID, Event] = dict()
 
     def act(self, event_uuid:EventUUID):
