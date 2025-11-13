@@ -28,7 +28,6 @@ class Simulator(SimulatorInterface):
     def step(self):
         _, next_event = heappop(self._event_queue)
         next_event.execute()
-        print("Simulation step...\n")
 
     # SimulatorInterface methods
     def add_simulation_entity(self, simulator_entity: SimulatorEntity):
