@@ -23,8 +23,7 @@ class SimulationSubscriber(SimulatorEntity):
         self.remove_event_from_queue(event_uuid)
         del self._events[event_uuid]
 
-    def get_simulator_time(self):
-        return self.simulator_interface.get_time()
+
 
     def notify_event(self, event: Event):
         pass

@@ -29,6 +29,7 @@ class Simulator(SimulatorInterface):
     def step(self):
         _, next_event = heappop(self._event_queue)
         next_event.execute()
+        self._current_time = next_event.timestamp
 
     # SimulatorInterface methods
     def add_simulation_entity(self, simulator_entity: SimulatorEntity):

@@ -28,3 +28,5 @@ class SimulatorSubscriber(SimulatorEntity):
         if (self.simulator_interface is not None):
             self.simulator_interface.notify_status(event.event_id, event.status)
         # Resume here
+    def get_simulator_time(self):
+        return self.simulator_interface.get_time()
