@@ -14,6 +14,7 @@ class Simulator(SimulatorInterface):
         # self._simulation_workers: List[SimulationWorker]
         self._event_queue: List[Tuple[int,Event]] = []
         self._simulation_entities: dict[SimulatorEntityUUID, SimulatorEntity] = {}
+        self._current_time: int = 0
         # self.interface: SimulatorInterface = SimulatorInterface(self)
 
     def load_simulation_parameters(self, simulation_parameters: dict):
@@ -48,6 +49,9 @@ class Simulator(SimulatorInterface):
 
     def notify_status(self, event_uuid: EventUUID, event_status: EventStatus):
         pass
+
+    def get_time(self):
+        return self._current_time
 
 
     # ########################################

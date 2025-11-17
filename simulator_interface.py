@@ -25,3 +25,7 @@ class SimulatorInterface:
     @abstractmethod
     def notify_status(self, event_uuid: EventUUID, event_status: EventStatus):
         pass
+
+    @abstractmethod
+    def get_time(self):
+        pass
